@@ -15,6 +15,7 @@ const QuotesModal = () => {
     (state: any) => state.bridge
   );
   const quoteDetail = bridgeQuote.routes?.[0];
+  const apiUrl = process.env.API_URL;
 
   const fetchQuotes = async () => {
     const query = {
@@ -23,9 +24,7 @@ const QuotesModal = () => {
       amount: "1000000000000000000",
     };
 
-    const url = `http://localhost:9999/api/params?${new URLSearchParams(
-      query
-    ).toString()}`;
+    const url = `${apiUrl}/api/params?${new URLSearchParams(query).toString()}`;
 
     try {
       const response = await axios.post(url);

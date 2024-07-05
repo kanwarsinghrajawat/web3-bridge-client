@@ -14,13 +14,13 @@ const ChainCard = () => {
   const [expandedChainId, setExpandedChainId] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
 
+  const apiUrl = process.env.API_URL;
+
   useEffect(() => {
     const fetchToken = async (id: number) => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          `http://localhost:9999/api/token?chainId=${id}`
-        );
+        const response = await axios.get(`${apiUrl}/api/token?chainId=${id}`);
         dispatch(setTokens(response.data));
         setExpandedChainId(id);
       } catch (error) {

@@ -37,12 +37,12 @@ const TokenCard = () => {
     token.name.toLowerCase().includes(searchString.toLowerCase())
   );
 
+  const apiUrl = process.env.API_URL;
+
   const fetchToken = async (id: number) => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `http://localhost:9999/api/token?chainId=${id}`
-      );
+      const response = await axios.get(`h${apiUrl}/api/token?chainId=${id}`);
       dispatch(setTokens(response.data));
     } catch (error) {
       console.error("Error fetching tokens:", error);
