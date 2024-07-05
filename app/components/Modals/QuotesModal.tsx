@@ -24,9 +24,9 @@ const QuotesModal = () => {
       amount: "1000000000000000000",
     };
 
-    const url = `https://web3-bridge-server-j67lcj031-kanwar-singhs-projects.vercel.app/api/params?${new URLSearchParams(
-      query
-    ).toString()}`;
+    const apiUrl = "https://web3-bridge-server.vercel.app";
+
+    const url = `${apiUrl}/api/params?${new URLSearchParams(query).toString()}`;
 
     try {
       const response = await axios.post(url);
