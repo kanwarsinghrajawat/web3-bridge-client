@@ -40,7 +40,6 @@ const QuotesCard = () => {
       dstChainId: toToken.chainId,
       dstQuoteTokenAddress: toToken.address,
     };
-    const apiUrl = process.env.API_URL;
 
     const url = `${apiUrl}/api/quotes?${new URLSearchParams(
       queryParams
