@@ -29,6 +29,7 @@ const QuotesCard = () => {
   const [loading, setLoading] = useState(true);
 
   supportedChain();
+  const apiUrl = "https://web3-bridge-server.vercel.app";
 
   const fetchQuotes = async () => {
     const queryParams = {
@@ -65,7 +66,7 @@ const QuotesCard = () => {
     ) => {
       try {
         const response = await axios.get(
-          `http://localhost:9999/api/token?chainId=${chainId}`
+          `${apiUrl}/api/token?chainId=${chainId}`
         );
         dispatch(setTokenAction(response.data[0]));
         setLoading(false);

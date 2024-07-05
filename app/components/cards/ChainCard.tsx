@@ -14,7 +14,7 @@ const ChainCard = () => {
   const [expandedChainId, setExpandedChainId] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = process.env.API_URL;
+  const apiUrl = "https://web3-bridge-server.vercel.app";
 
   useEffect(() => {
     const fetchToken = async (id: number) => {

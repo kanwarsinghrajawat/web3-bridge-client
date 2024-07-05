@@ -37,7 +37,7 @@ const TokenCard = () => {
     token.name.toLowerCase().includes(searchString.toLowerCase())
   );
 
-  const apiUrl = process.env.API_URL;
+  const apiUrl = "https://web3-bridge-server.vercel.app";
 
   const fetchToken = async (id: number) => {
     setLoading(true);
