@@ -41,7 +41,7 @@ const QuotesCard = () => {
     };
     const apiUrl = process.env.API_URL;
 
-    const url = `${apiUrl}/api/quotes?${new URLSearchParams(
+    const url = `https://web3-bridge-server-j67lcj031-kanwar-singhs-projects.vercel.app/api/quotes?${new URLSearchParams(
       queryParams
     ).toString()}`;
 

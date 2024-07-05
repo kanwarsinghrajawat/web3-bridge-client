@@ -42,7 +42,9 @@ const TokenCard = () => {
   const fetchToken = async (id: number) => {
     setLoading(true);
     try {
-      const response = await axios.get(`h${apiUrl}/api/token?chainId=${id}`);
+      const response = await axios.get(
+        `https://web3-bridge-server-j67lcj031-kanwar-singhs-projects.vercel.app/api/token?chainId=${id}`
+      );
       dispatch(setTokens(response.data));
     } catch (error) {
       console.error("Error fetching tokens:", error);

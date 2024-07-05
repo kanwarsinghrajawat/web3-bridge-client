@@ -20,7 +20,9 @@ const ChainCard = () => {
     const fetchToken = async (id: number) => {
       try {
         setLoading(true);
-        const response = await axios.get(`${apiUrl}/api/token?chainId=${id}`);
+        const response = await axios.get(
+          `https://web3-bridge-server-j67lcj031-kanwar-singhs-projects.vercel.app/api/token?chainId=${id}`
+        );
         dispatch(setTokens(response.data));
         setExpandedChainId(id);
       } catch (error) {
